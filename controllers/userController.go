@@ -107,7 +107,12 @@ func Login(c *gin.Context) {
 }
 
 func Validate(c *gin.Context) {
+	user, _ := c.Get("user")
+
+	//example for argument
+	//user.(models.User).Email = "xxx"
+
 	c.JSON(http.StatusOK, gin.H{
-		"message": "Im login",
+		"message": user,
 	})
 }
